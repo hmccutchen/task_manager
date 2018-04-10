@@ -1,5 +1,6 @@
-class TasksController < ApplicationController
 
+class TasksController < ApplicationController
+  # before_action :set_task, only: [:show, :new, :edit, :destroy, :create]
 
 
 
@@ -15,33 +16,35 @@ class TasksController < ApplicationController
   end
 
   def new
+
     @task = Task.new
 
   end
 
   def create
-    @task = Task.create(task_params)
-    if @task.save
-      format.html { redirect_to tasks_path, notice: 'Task was successfully created!.' }
-
-    end
-
-    def update
-    end
-
-    def destroy
-    end
-
-    def edit
-    end
-
-    private
-
-    def task_params
-
-      params.require(:task).permit(:title, :details, :completed)
-    end
-
-
+    @task = Task.new(task_params)
+     @task.save
+     redirect_to tasks_path
   end
+
+  def update
+  end
+
+  def destroy
+  end
+
+  def edit
+  end
+
+  private
+
+  def task_params
+    params.require(:task).permit(:title, :details, :completed)
+  end
+
+  def set_task
+    @task = Task.find(params[:id])
+  end
+
+
 end
