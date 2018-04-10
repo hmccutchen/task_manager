@@ -1,0 +1,17 @@
+
+
+
+<div class="container">
+<h1>Tasks</h1>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <% @tasks.each do |task| %>
+      <%= link_to task_path(task) do %>
+      <%= task.title %>
+      <%= task.completed %>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to "create a task", new_task_path, class: "btn btn-primary" %>
+</div>
