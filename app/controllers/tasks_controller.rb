@@ -1,6 +1,6 @@
 
 class TasksController < ApplicationController
-  # before_action :set_task, only: [:show, :new, :edit, :destroy, :create]
+  before_action :set_task, only: [:show,  :edit, :destroy]
 
 
 
@@ -12,7 +12,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
+    # @task = Task.find(params[:id])
   end
 
   def new
@@ -34,16 +34,17 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @task = Task.new
   end
 
   private
 
-  def task_params
-    params.require(:task).permit(:title, :details, :completed)
-  end
-
   def set_task
     @task = Task.find(params[:id])
+  end
+
+  def task_params
+    params.require(:task).permit(:title, :details, :completed)
   end
 
 
