@@ -1,0 +1,11 @@
+
+
+
+<div class="container">
+
+ <h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+
+<%= link_to "Back", tasks_path, class: "btn btn-success" %>
+<%= link_to "edit this task", edit_task_path, class: "btn btn-primary"  %>
+</div>
