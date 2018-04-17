@@ -1,6 +1,7 @@
 
 
 
+<div class="task-list">
 <div class="container">
 
  <h2><%= @task.title %></h2>
@@ -8,4 +9,6 @@
 
 <%= link_to "Back", tasks_path, class: "btn btn-success" %>
 <%= link_to "edit this task", edit_task_path, class: "btn btn-primary"  %>
+<%= link_to "delete", task_path, :method => :delete, class: "btn btn-danger"  %>
+</div>
 </div>
