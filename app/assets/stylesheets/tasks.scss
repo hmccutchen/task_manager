@@ -6,3 +6,26 @@
   text-align: center;
   margin-top: 100px;
 }
+
+.task-list  a:hover{
+  text-decoration: none;
+  color: #da552f;
+}
+
+.back-button{
+  text-align: center;
+}
+
+.nav-bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  border-color: #d4d4d6;
+
+}
+
+.nav-bar a:hover{
+
+  color: #da552f;
+}
+
