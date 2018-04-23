@@ -1,9 +1,17 @@
 <div class="task-list">
   <div class="container">
     <%= simple_form_for @task do |t|%>
-    <p>Title<%= t.input :title %></p>
-    <p>Details<%= t.input :details %></p>
+    <p>Title<%= t.input :title, label: false %></p>
+    <p>Details<%= t.input :details, label: false %></p>
     <%= t.button :submit, class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>
+
+<style>
+
+  p{
+    font-size: 30px;
+  }
+
+</style>
